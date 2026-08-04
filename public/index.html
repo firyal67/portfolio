@@ -708,6 +708,138 @@
 
     .timeline-company { color: var(--muted); font-size: 0.85rem; }
 
+    /* ── STAGE / EXPERIENCE ── */
+    #stage { background: var(--bg); }
+
+    .stage-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .stage-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .stage-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      padding: 1px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .stage-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 80px rgba(74,158,255,0.15), 0 8px 24px rgba(0,0,0,0.2);
+    }
+
+    .stage-card:hover::before { opacity: 1; }
+
+    .stage-company {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .stage-logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .stage-name {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .stage-period {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .stage-role {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .stage-desc {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .stage-missions {
+      list-style: none;
+      margin: 1rem 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .stage-missions li {
+      display: flex;
+      gap: 0.6rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .stage-missions li::before {
+      content: '▹';
+      color: var(--accent2);
+      flex-shrink: 0;
+    }
+
+    .stage-certificate {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.8rem 1.6rem;
+      background: linear-gradient(135deg, var(--accent), #2d7dd2);
+      border: none;
+      border-radius: 10px;
+      color: #fff !important;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 24px rgba(74,158,255,0.3);
+    }
+
+    .stage-certificate:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 40px rgba(74,158,255,0.5);
+    }
+
     /* ── CONTACT ── */
     #contact { background: var(--bg); }
 
@@ -871,6 +1003,7 @@
       .projects-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
       .projects-grid { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .stage-layout { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     }
   </style>
@@ -883,6 +1016,7 @@
     <ul class="nav-links">
       <li><a href="#about">À propos</a></li>
       <li><a href="#projects">Projets</a></li>
+      <li><a href="#stage">Stage</a></li>
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
@@ -1186,6 +1320,54 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAGE -->
+  <section id="stage">
+    <div class="section-inner">
+      <p class="section-tag">Expérience</p>
+      <h2 class="section-title">Mon <span class="gradient-text">stage</span></h2>
+      <p class="section-sub" style="margin-bottom:2rem">
+        Une expérience en entreprise qui m'a permis de mettre en pratique mes compétences en développement.
+      </p>
+
+      <div class="stage-layout">
+        <div class="stage-card fade-up">
+          <div class="stage-company">
+            <div class="stage-logo">💼</div>
+            <div>
+              <div class="stage-name">Stage en Développement</div>
+              <div class="stage-period">— Dates du stage —</div>
+            </div>
+          </div>
+          <div class="stage-role">— Nom de l'entreprise · Lieu —</div>
+          <p class="stage-desc">
+            — Description du stage : missions réalisées, technologies utilisées et compétences développées. —
+          </p>
+          <ul class="stage-missions">
+            <li>— Mission principale 1 —</li>
+            <li>— Mission principale 2 —</li>
+            <li>— Mission principale 3 —</li>
+          </ul>
+          <a href="certificat-stage.pdf" target="_blank" class="stage-certificate">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Voir le certificat de stage
+          </a>
+        </div>
+
+        <div class="stage-card fade-up" style="transition-delay:0.15s; display:flex; flex-direction:column; justify-content:center; text-align:center;">
+          <div style="font-size:3rem; margin-bottom:1rem;">🎓</div>
+          <div style="font-family:var(--font-display); font-size:1.15rem; font-weight:700; margin-bottom:0.5rem;">Attestation de stage</div>
+          <p style="color:var(--muted); font-size:0.9rem; line-height:1.7; font-weight:300;">
+            Le certificat officiel du stage est disponible en cliquant sur le bouton ci-dessous.
+          </p>
+          <a href="certificat-stage.pdf" target="_blank" style="margin:1.5rem auto 0; display:inline-flex; align-items:center; gap:0.6rem; padding:0.8rem 1.6rem; background:transparent; border:1.5px solid var(--border); border-radius:10px; color:var(--muted); font-size:0.9rem; font-weight:600; text-decoration:none; transition:all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--text)'" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--muted)'">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Télécharger le PDF
+          </a>
         </div>
       </div>
     </div>
