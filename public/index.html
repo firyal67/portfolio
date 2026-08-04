@@ -711,14 +711,9 @@
     /* ── STAGE / EXPERIENCE ── */
     #stage { background: var(--bg); }
 
-    .stage-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-top: 2.5rem;
-    }
-
     .stage-card {
+      max-width: 720px;
+      margin: 2.5rem auto 0;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 20px;
@@ -753,7 +748,7 @@
       display: flex;
       align-items: center;
       gap: 1rem;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
     }
 
     .stage-logo {
@@ -786,36 +781,7 @@
     .stage-role {
       color: var(--muted);
       font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
-
-    .stage-desc {
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.8;
-      font-weight: 300;
-    }
-
-    .stage-missions {
-      list-style: none;
-      margin: 1rem 0 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .stage-missions li {
-      display: flex;
-      gap: 0.6rem;
-      color: var(--muted);
-      font-size: 0.88rem;
-      line-height: 1.6;
-    }
-
-    .stage-missions li::before {
-      content: '▹';
-      color: var(--accent2);
-      flex-shrink: 0;
+      margin-bottom: 0.25rem;
     }
 
     .stage-certificate {
@@ -1003,7 +969,6 @@
       .projects-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
       .projects-grid { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .stage-layout { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     }
   </style>
@@ -1330,48 +1295,20 @@
     <div class="section-inner">
       <p class="section-tag">Expérience</p>
       <h2 class="section-title">Mon <span class="gradient-text">stage</span></h2>
-      <p class="section-sub" style="margin-bottom:2rem">
-        Une expérience en entreprise qui m'a permis de mettre en pratique mes compétences en développement.
-      </p>
 
-      <div class="stage-layout">
-        <div class="stage-card fade-up">
-          <div class="stage-company">
-            <div class="stage-logo">💼</div>
-            <div>
-              <div class="stage-name">DevSync</div>
-              <div class="stage-period">1 Juil. 2026 — 31 Juil. 2026</div>
-            </div>
+      <div class="stage-card fade-up">
+        <div class="stage-company">
+          <div class="stage-logo">💼</div>
+          <div>
+            <div class="stage-name">DevSync</div>
+            <div class="stage-role">Stage au sein du département IT · Zaghouan, Tunisie</div>
+            <div class="stage-period">1 Juil. 2026 — 31 Juil. 2026</div>
           </div>
-          <div class="stage-role">Stage au sein du département IT · Zaghouan, Tunisie</div>
-          <p class="stage-desc">
-            Stage d'un mois chez <strong style="color:var(--text)">DevSync</strong> au sein du département IT, où j'ai développé mes compétences en développement web full-stack au contact de professionnels.
-          </p>
-          <ul class="stage-missions">
-            <li>Développement d'applications web (frontend & backend)</li>
-            <li>Collaboration en équipe sur des projets techniques</li>
-            <li>Démonstration de rigueur, d'initiative et de professionnalisme</li>
-          </ul>
-          <a href="certificat-stage.pdf" target="_blank" class="stage-certificate">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Télécharger le certificat (PDF)
-          </a>
         </div>
-
-        <div class="stage-card fade-up" style="transition-delay:0.15s; display:flex; flex-direction:column; align-items:center; text-align:center;">
-          <div style="font-size:3rem; margin-bottom:1rem;">🎓</div>
-          <div style="font-family:var(--font-display); font-size:1.15rem; font-weight:700; margin-bottom:0.5rem;">Attestation de stage</div>
-          <p style="color:var(--muted); font-size:0.9rem; line-height:1.7; font-weight:300; max-width:340px;">
-            Le certificat officiel du stage, délivré par DevSync le 4 août 2026.
-          </p>
-          <div class="cert-preview" style="margin-top:1rem; cursor:pointer;" onclick="window.open('certificat-stage-preview.png','_blank')" title="Agrandir le certificat">
-            <img src="certificat-stage-preview.png" alt="Certificat de stage DevSync" style="width:100%; display:block; border-radius:10px; border:1px solid var(--border);" />
-          </div>
-          <a href="certificat-stage.pdf" target="_blank" style="margin-top:1.5rem; display:inline-flex; align-items:center; gap:0.6rem; padding:0.8rem 1.6rem; background:transparent; border:1.5px solid var(--border); border-radius:10px; color:var(--muted); font-size:0.9rem; font-weight:600; text-decoration:none; transition:all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--text)'" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--muted)'">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Télécharger le PDF
-          </a>
-        </div>
+        <a href="certificat-stage.pdf" target="_blank" class="stage-certificate">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Attestation
+        </a>
       </div>
     </div>
   </section>
